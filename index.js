@@ -30,6 +30,7 @@ client.on('messageReactionAdd', async (reaction, user) => {
     if (reaction.emoji.name !== '⭐') return;
     if (message.author.id === user.id) return;
     if (message.author.bot) return;
+    if (reaction.count < 3) return; // we need 3 stars for starboard
     const starChannel = client.channels.get(starboardChannelID)
     if (!starChannel) return;
     const fetchedMessages = await starChannel.fetchMessages({ limit: 100 });
@@ -57,7 +58,7 @@ client.on('messageReactionAdd', async (reaction, user) => {
         .setDescription(`**[Jump To Message](${message.url})**\n\n${message.cleanContent}`)
         .setAuthor(message.author.tag, message.author.displayAvatarURL)
         .setTimestamp(new Date())
-        .setFooter(`⭐ 1 | ${message.id}`)
+        .setFooter(`⭐ 3 | ${message.id}`)
         .setImage(image);
       await starChannel.send({ embed });
     }
@@ -87,7 +88,7 @@ client.on('messageReactionRemove', async (reaction, user) => {
         .setImage(image);
       const starMsg = await starChannel.fetchMessage(stars.id);
       await starMsg.edit({ embed });
-      if(parseInt(star[1]) - 1 == 0) return starMsg.delete(1000);
+      if(parseInt(star[1]) - 1 == 2) return starMsg.delete(1000);
     }
  
 });
