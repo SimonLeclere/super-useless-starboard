@@ -1,19 +1,22 @@
 {
-  "name": "simple-starboard",
-  "version": "0.0.1",
-  "description": "A simple starboard bot for discord.",
+  "name": "super-simple-starboard",
+  "version": "1.0.0",
+  "description": "⭐ A super simple starboard for Discord.js V12 ",
   "main": "index.js",
   "scripts": {
-    "start": "node index.js"
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/SimonLeclere/super-simple-starboard.git"
+  },
+  "author": "Simon Leclère",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/SimonLeclere/super-simple-starboard/issues"
+  },
+  "homepage": "https://github.com/SimonLeclere/super-simple-starboard#readme",
   "dependencies": {
-    "discord.js": "^11.5.1"
-  },
-  "engines": {
-    "node": "10.x"
-  },
-  "license": "MIT",
-  "keywords": [
-    "starboard-bot"
-  ]
+    "discord.js": "^12.5.1"
+  }
 }
