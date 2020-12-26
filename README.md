@@ -1,5 +1,7 @@
 # Super simple discord starboard
 
+/!\ **Note**: This repository works partially, I strongly advise you to use my module instead : [discord-starboards](https://github.com/SimonLeclere/discord-starboards).
+
 ## Installation
 
 Start by cloning the repo and installing the dependencies
